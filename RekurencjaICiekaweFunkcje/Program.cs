@@ -3,9 +3,29 @@
 
 using RekurencjaICiekaweFunkcje;
 
-Console.WriteLine("Hello, World!");
 
 SolvedTasks solvedTasks = new();
+
+//Zad 0. Ciekawe zadanie wykrywanie palindromu
+/* Palindrom to słowo które jest takie same od początku jak i od końca
+ * np. kajak
+ * Zrób program, który pobiera od użytkownika stringa i sprawdza zwraca czy jest palindromem.
+ * Jeżeli użytkownik napisze: "ESC" to przechodzi dalej do następnych zadań.
+ */
+Console.WriteLine("Sprawdzajka do palindromów, podaj słowo");
+while(true)
+{
+    var userInput = Console.ReadLine();
+    if(userInput == "ESC")
+    {
+        break;
+    }
+    else
+    {
+        solvedTasks.IsPalindrome(userInput, true);
+    }
+}
+
 
 //Rekurencja - Ciąg fibonacciego
 /* Zad 1. Napisz funkcję liczącą kolejne liczby ciągu fibonacciego z wykorzystaniem rekurencji.
@@ -35,3 +55,4 @@ solvedTasks.DisplayCustomSeries(10);
  */
 int[] arr = new int[10] { 1, -8, 2, 7, -6, 5, 16, 4, -11, 18 };
 solvedTasks.MinMaxArray(arr);
+

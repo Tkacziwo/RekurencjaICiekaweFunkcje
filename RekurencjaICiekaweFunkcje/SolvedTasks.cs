@@ -4,6 +4,45 @@ namespace RekurencjaICiekaweFunkcje;
 
 public class SolvedTasks
 {
+    //Zad 0
+    public void IsPalindrome(string str, bool option = false)
+    {
+        //różne sposoby
+        //1. najprostszy
+
+        if (!option)
+        {
+            string tempString = "";
+            for (int i = str.Length - 1; i >= 0; i--)
+            {
+                tempString += str[i];
+            }
+            if (tempString == str)
+            {
+                Console.WriteLine("Słowo: " + str + " jest palindromem");
+            }
+            else
+            {
+                Console.WriteLine("Słowo: " + str + " nie jest palindromem");
+            }
+        }
+        else
+        {
+            //2. sprytniejszy
+            var charArr = str.ToCharArray();
+            Array.Reverse(charArr);
+            var reversedString = new string(charArr);
+            if (reversedString == str)
+            {
+                Console.WriteLine("Słowo: " + str + " jest palindromem");
+            }
+            else
+            {
+                Console.WriteLine("Słowo: " + str + " nie jest palindromem");
+            }
+        }
+    }
+
     //Zad 1
     private static int Fib(int n)
     {
