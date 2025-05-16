@@ -3,7 +3,6 @@
 
 using RekurencjaICiekaweFunkcje;
 
-
 SolvedTasks solvedTasks = new();
 
 //Zad 0. Ciekawe zadanie wykrywanie palindromu
@@ -12,6 +11,7 @@ SolvedTasks solvedTasks = new();
  * Zrób program, który pobiera od użytkownika stringa i sprawdza zwraca czy jest palindromem.
  * Jeżeli użytkownik napisze: "ESC" to przechodzi dalej do następnych zadań.
  */
+
 Console.WriteLine("Sprawdzajka do palindromów, podaj słowo");
 while(true)
 {
@@ -22,19 +22,23 @@ while(true)
     }
     else
     {
+        var size = userInput.Length;
         solvedTasks.IsPalindrome(userInput, true);
     }
 }
-
 
 //Rekurencja - Ciąg fibonacciego
 /* Zad 1. Napisz funkcję liczącą kolejne liczby ciągu fibonacciego z wykorzystaniem rekurencji.
  * podpowiedź: ciąg fibonacciego to taka sekwencja:
  * 1 1 2 3 5 8 13 21 ...
+ *el0 el1
  * każdy element ciągu fib można zapisać jako sumę dwóch poprzednich liczb:
  * 
  * n = n-1 + n-2
  */
+//int res = solvedTasks.Fib2(50);
+//System.Console.WriteLine(res);
+
 
 solvedTasks.DisplayNthFibonacciNumber(10);
 
@@ -49,10 +53,11 @@ solvedTasks.DisplayNthFibonacciNumber(10);
 solvedTasks.DisplayCustomSeries(10);
 //Powtórka z poprzednich zajęć tablice i proste algorytmy
 /* Zad 3. Zadeklaruj tablicę 10 elementową i wypełnij ją liczbami (nie korzystaj z petli od 0 do size wpisz ręcznie numerki)
- * Następnie napisz 2 osobne funkcje: min i max, które kolejno zwracają minimalny element w tablicy i maksymalny element w tablicy.
+ * Następnie napisz funkcje: min i max, które kolejno zwracają minimalny element w tablicy i maksymalny element w tablicy.
  * funkcje zwracają int.
  * Na koniec wypisz wszystkie elementy tablicy, najmiejszy i największy element tablicy.
  */
 int[] arr = new int[10] { 1, -8, 2, 7, -6, 5, 16, 4, -11, 18 };
 solvedTasks.MinMaxArray(arr);
 
+solvedTasks.Factorial(5);

@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.Design;
-
-namespace RekurencjaICiekaweFunkcje;
+﻿namespace RekurencjaICiekaweFunkcje;
 
 public class SolvedTasks
 {
@@ -10,38 +8,72 @@ public class SolvedTasks
         //różne sposoby
         //1. najprostszy
 
-        if (!option)
+        // if (!option)
+        // {
+        //     string tempString = "";
+        //     for (int i = str.Length - 1; i >= 0; i--)
+        //     {
+        //         tempString += str[i];
+        //     }
+        //     if (tempString == str)
+        //     {
+        //         Console.WriteLine("Słowo: " + str + " jest palindromem");
+        //     }
+        //     else
+        //     {
+        //         Console.WriteLine("Słowo: " + str + " nie jest palindromem");
+        //     }
+        // }
+        // else
+        // {
+        //     //2. sprytniejszy
+        //     var charArr = str.ToCharArray();
+        //     Array.Reverse(charArr);
+        //     var reversedString = new string(charArr);
+        //     if (reversedString == str)
+        //     {
+        //         Console.WriteLine("Słowo: " + str + " jest palindromem");
+        //     }
+        //     else
+        //     {
+        //         Console.WriteLine("Słowo: " + str + " nie jest palindromem");
+        //     }
+        // }
+
+        //jeszcze 3 sposob
+
+        for (int i = 0; i < str.Length / 2; i++)
         {
-            string tempString = "";
-            for (int i = str.Length - 1; i >= 0; i--)
+            if (str[i] != str[str.Length - i - 1])
             {
-                tempString += str[i];
+                System.Console.WriteLine("Nie jest dobrze");
             }
-            if (tempString == str)
-            {
-                Console.WriteLine("Słowo: " + str + " jest palindromem");
-            }
-            else
-            {
-                Console.WriteLine("Słowo: " + str + " nie jest palindromem");
-            }
+        }
+        System.Console.WriteLine("jest dobrze");
+    }
+
+    public int Fib2(int n) //np 3
+    {
+        if (n == 1 || n == 0)
+        {
+            return 1;
         }
         else
         {
-            //2. sprytniejszy
-            var charArr = str.ToCharArray();
-            Array.Reverse(charArr);
-            var reversedString = new string(charArr);
-            if (reversedString == str)
-            {
-                Console.WriteLine("Słowo: " + str + " jest palindromem");
-            }
-            else
-            {
-                Console.WriteLine("Słowo: " + str + " nie jest palindromem");
-            }
+            // suma dwóch poprzednich -> n-1 + n-2
+            return Fib2(n - 1) + Fib2(n - 2);
         }
     }
+
+
+
+
+
+
+
+
+
+
 
     //Zad 1
     private static int Fib(int n)
@@ -122,5 +154,17 @@ public class SolvedTasks
         Console.WriteLine(result);
         Console.WriteLine("Najmniejsza wartość w tablicy: " + min);
         Console.WriteLine("Największa wartość w tablicy: " + max);
+    }
+
+    public void Factorial(int n)
+    {
+        int res = 1;
+        while (n > 0)
+        {
+            res *= n;
+            n--;
+        }
+
+        System.Console.WriteLine(res);
     }
 }
